@@ -5,6 +5,8 @@ import requests
 from bs4 import BeautifulSoup
 import sqlite3
 import shapely
+import get_categories
+import save
 
 #Code
 connection = sqlite3.connect('crawler.db')
@@ -48,7 +50,7 @@ while True:
 
 
 
-    def crawl_menu():
+    def crawl_search():
         city = input("Enter city name: ")
         neighborhood = input("Enter neighborhood name: ")
         category = input("Enter category name: ")
@@ -58,18 +60,35 @@ while True:
         
         if city == "" or neighborhood == "" or category == "":
             print("Please fill the inputs...")
-            crawl_menu()
+            crawl_search()
         else:
             print("Crawling started...")
             init(category=category, neighbor=neighborhood, city=city)
         
     def start_menu():
-        print("1. Crawl")
-        print("2. Exit")
+        print("Which data do you want to crawl? \n")
+        print("0. Normal Crawling")
+        print("1. Provinces")
+        print("2. Cities")
+        print("3. Neighborhoods")
+        print("4. Categories")
+        print("5. Sub Categories")
+        print("6. Exit")
         choice = int(input("Enter your choice: "))
-        if choice == 1:
-            crawl_menu()
+        if choice == 0:
+            crawl_search()
+        elif choice == 1:
+            pass
         elif choice == 2:
+            pass
+        elif choice == 3:
+            pass
+        elif choice == 4:
+            categories = get_categories.open_browser()
+            save.save_categories(categories=categories)
+        elif choice == 5:
+            pass
+        elif choice == 6:
             exit()
         else:
             print("Invalid choice")
