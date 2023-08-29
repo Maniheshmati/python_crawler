@@ -12,3 +12,15 @@ def save_categories(categories):
     connection.close()
     
     print("Saves in table Categories \n")
+    
+def save_subCategories(subCategories):
+    pass
+
+def save_provinces(provinces):
+    pass
+
+def save_cities(cities):
+    pass
+
+def save_neighborhoods(neighborhoods):
+    pass
