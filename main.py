@@ -9,26 +9,31 @@ import get_categories
 import save
 
 #Code
-connection = sqlite3.connect('crawler.db')
-cursor = connection.cursor()
+# connection = sqlite3.connect('crawler.db')
+# cursor = connection.cursor()
 
 # cursor.execute("""CREATE TABLE IF NOT EXISTS provinces(
 #     id INTEGER PRIMARY KEY AUTOINCREMENT,
 #     name TEXT NOT NULL
-#     )""");
+#     )""")
 # connection.commit()
 # cursor.execute("""CREATE TABLE IF NOT EXISTS cities(
 #     id INTEGER PRIMARY KEY AUTOINCREMENT,
 #     name TEXT NOT NULL,
 #     provinve_id INTEGER NOT NULL,
 #     FOREIGN KEY (provinve_id) REFERENCES provinces(id)
-#     )""");
+#     )""")
 # connection.commit()
 # cursor.execute("""CREATE TABLE IF NOT EXISTS neighborhoods(
 #     id INTEGER PRIMARY KEY AUTOINCREMENT,
 #     name TEXT NOT NULL,
 #     city_id INTEGER NOT NULL,
 #     FOREIGN KEY (city_id) REFERENCES cities(id))""");
+# connection.commit()
+# cursor.execute("""CREATE TABLE IF NOT EXISTS categories(
+#     id INTEGER PRIMARY KEY AUTOINCREMENT,
+#     name TEXT NOT NULL
+# )""")
 # connection.commit()
 
 
