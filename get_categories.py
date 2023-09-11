@@ -15,6 +15,7 @@ def open_browser():
     driver.get(url)
     time.sleep(2)
     driver.find_element(By.CLASS_NAME, 'go862738768').click()
+    time.sleep(2)
     driver.find_element(By.NAME, 'more-horizontal').click()
     time.sleep(2)
     div_elements = driver.find_elements(By.CLASS_NAME, 'go1407998477')
@@ -23,8 +24,3 @@ def open_browser():
         
     print("Crawling on categories finished :) \n")
     return categories
-        
-
-    
-    
-open_browser()
