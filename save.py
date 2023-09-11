@@ -4,9 +4,16 @@ def save_categories(categories):
     connection = sqlite3.connect('crawler.db')
     cursor = connection.cursor()
     for category in categories:
+        # Check if the cetogory is already in the table
         cursor.execute("""
-            Insert INTO categories(name) VALUES(?)
+            SELECT * FROM categories WHERE name = ?
         """, (category,))
+        if cursor.fetchone():
+            continue
+        else:
+            cursor.execute("""
+                Insert INTO categories(name) VALUES(?)
+            """, (category,))
         
     connection.commit()
     connection.close()
