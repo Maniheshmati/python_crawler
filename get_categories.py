@@ -9,9 +9,7 @@ url = 'https://www.behtarino.com'
 def open_browser():
     print("Crawling on categories started")
     categories = []
-    chrome_options = Options()
-    chrome_options.add_experimental_option("detach", True)
-    driver = webdriver.Chrome(chrome_options)
+    driver = webdriver.Chrome()
     driver.get(url)
     time.sleep(2)
     driver.find_element(By.CLASS_NAME, 'go862738768').click()
