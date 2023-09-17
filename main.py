@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 import sqlite3
 import shapely
 import get_categories
+import get_subCategories
 import save
 
 #Code
@@ -92,7 +93,8 @@ while True:
             categories = get_categories.open_browser()
             save.save_categories(categories=categories)
         elif choice == 5:
-            pass
+            subCategories = get_subCategories.open_browser()
+            # save.save_subCategories(subCategories=subCategories)
         elif choice == 6:
             exit()
         else:
