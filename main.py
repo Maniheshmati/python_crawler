@@ -93,8 +93,7 @@ while True:
             categories = get_categories.open_browser()
             save.save_categories(categories=categories)
         elif choice == 5:
-            subCategories = get_subCategories.open_browser()
-            # save.save_subCategories(subCategories=subCategories)
+            get_subCategories.open_browser()
         elif choice == 6:
             exit()
         else:
